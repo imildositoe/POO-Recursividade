@@ -11,23 +11,9 @@ public class Numero_3 {
     /**
      * Metodo que calcula a soma dos caracteres do numero introduzido
      * @param n 
-     * @param i 
-     */
-    private static int soma(int n , int i) {
-        String numero = Integer.toString(n);
-        if (i == 0) {
-            return Integer.parseInt(Character.toString(numero.charAt(i)));
-        } else {
-            return Integer.parseInt(Character.toString(numero.charAt(i))) + soma(n, i - 1);
-        }
-    }
-    
-    /**
-     * Metodo que serve para fixar o tamanho dos caracteres do numero introduzido
-     * @param n 
      */
     private static int soma(int n) {
-        return soma(n,Integer.toString(n).length() - 1);
+        return (n == 0) ? 0 : (n % 10) + soma(n / 10);
     }
     
     /**
@@ -38,6 +24,6 @@ public class Numero_3 {
         Scanner e = new Scanner(System.in);
         System.out.print("Introduza o numero :");
         
-        System.out.println("O valor da soma e :" + soma(e.nextInt()));
+        System.out.println("O valor da soma e : " + soma(e.nextInt()));
     }
 }
